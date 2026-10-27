@@ -7,7 +7,8 @@ import { seedDemoData } from "./services/demoSeed.js";
 
 const replicaSet = await MongoMemoryReplSet.create({ replSet: { count: 1, storageEngine: "wiredTiger" } });
 await connectDatabase(replicaSet.getUri());
-if (process.env.SEED_DEMO_DATA === "true" || process.argv.includes("--seed-demo")) console.info("Local demo seed:", await seedDemoData());
+// Always seed demo data on dev server startup so cakes are always available
+console.info("Local demo seed:", await seedDemoData());
 const app = createApp();
 const server = app.listen(config.port, () => console.info(`BAKEBERRY API listening on http://localhost:${config.port} with temporary MongoDB`));
 const stopReservationJob = startReservationExpiryJob();
