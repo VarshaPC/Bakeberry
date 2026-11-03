@@ -5,7 +5,7 @@ A single-shop artisanal cake ordering, advance booking, and MCP-integrated baker
 ## Architecture & Components
 
 - **Frontend (`/`)**: React + Vite single-page application with cake discovery, cart, booking calendar, and order tracking.
-- **Backend (`cakeora-backend/`)**: Node.js, Express, and MongoDB REST API (`/api/v1`) with JWT auth, transaction-safe stock reservations, and Razorpay payment integration.
+- **Backend (`bakeberry-backend/`)**: Node.js, Express, and MongoDB REST API (`/api/v1`) with JWT auth, transaction-safe stock reservations, and Razorpay payment integration.
 - **MCP Server (`bakeberry-mcp-server/`)**: Model Context Protocol server exposing BAKEBERRY tools to Claude Desktop over stdio.
 
 ## Documentation Index
@@ -13,6 +13,7 @@ A single-shop artisanal cake ordering, advance booking, and MCP-integrated baker
 All detailed technical documentation is organized in the [`docs/`](./docs) directory:
 
 - [**MCP Architecture**](./docs/MCP_Architecture.md) — Protocol specifications, system boundaries, and request flow.
+- [**Complete MCP Server Documentation**](./docs/MCP_Server_Documentation.md) — Requirements, setup, host configuration, tool behavior, access control, troubleshooting, and development.
 - [**MCP Tools Reference**](./docs/MCP_Tools.md) — Full schemas, inputs, and example responses for all 4 MCP tools.
 - [**Full Implementation Plan**](./docs/BAKEBERRY_MCP_Full_Implementation_Plan%20(1).md) — Detailed phase-by-phase implementation plan.
 - [**Project Documentation**](./docs/BAKEBERRY_PROJECT_DOCUMENTATION.md) — Complete BAKEBERRY storefront and backend specifications.
@@ -27,7 +28,7 @@ All detailed technical documentation is organized in the [`docs/`](./docs) direc
 
 ### 1. Start the Backend API
 ```bash
-cd cakeora-backend
+cd bakeberry-backend
 npm run dev
 # Starts on http://127.0.0.1:4000/api/v1 with demo data
 ```
@@ -63,4 +64,3 @@ Add the server entry to `%APPDATA%\Claude\claude_desktop_config.json`:
   }
 }
 ```
-
