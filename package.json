@@ -17,5 +17,7 @@
     "react-router-dom": "^6.28.1",
     "vite": "^6.0.7"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "pptxgenjs": "^4.0.1"
+  }
 }
