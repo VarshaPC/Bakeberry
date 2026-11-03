@@ -63,3 +63,4 @@ Add the server entry to `%APPDATA%\Claude\claude_desktop_config.json`:
   }
 }
 ```
+
