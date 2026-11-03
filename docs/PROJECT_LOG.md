@@ -195,3 +195,16 @@ A Vercel multi-service deployment was researched but not applied. Before impleme
 - Which paths are public (recommended `/api/*` to the API, catch-all to the app).
 - Whether the API should be hosted as a Vercel service or on a persistent Node host.
 - Bindings: none for the current browser-to-API topology; specify them only if a backend function calls another service server-side.
+
+## Model Context Protocol (MCP) Server Integration (2026-11-03)
+
+An official MCP Server (`bakeberry-mcp-server`) was created and connected to Claude Desktop:
+- **Package:** `bakeberry-mcp-server/` in TypeScript with `@modelcontextprotocol/sdk` and `zod`.
+- **Transport:** Standard I/O (`stdio`).
+- **Tools Implemented:**
+  1. `get_available_cakes`: Retrieves active cakes, variants, descriptions, pricing, and live stock.
+  2. `check_booking_availability`: Validates date/slot booking availability, enforcing the 3-calendar-day advance notice rule and `Asia/Kolkata` timezone.
+  3. `get_order_status`: Retrieves order timeline, items, and scheduled slot with customer data ownership checks.
+  4. `get_inventory_summary`: Displays staff/admin inventory summary of ready vs. reserved stock and daily production capacities.
+- **Claude Desktop Configuration:** Linked via `%APPDATA%\Claude\claude_desktop_config.json`.
+- **Documentation:** Architecture, tool reference, AI context management, and challenge records added under `docs/`.
